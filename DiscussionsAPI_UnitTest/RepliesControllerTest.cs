@@ -41,7 +41,7 @@ namespace DiscussionsAPI_UnitTest
         }
 
         [Fact]
-        public void GetAllReplies_DiscussionIdBased()
+        public void GetAllReplies_IdBased()
         {
 
             var controller = new RepliesController(config);
@@ -49,8 +49,7 @@ namespace DiscussionsAPI_UnitTest
 
             string JSONString = string.Empty;
             JSONString = JsonConvert.SerializeObject(result.Value);
-            Assert.Equal("[{\"Id\":8,\"Content\":\"I want to learn Maths!\",\"User_Id\":\"stud_123\",\"Discussion_Id\":2,\"Parent_id\":2,\"Parent_type\":\"Discussion\"}," +
-                    "{\"Id\":9,\"Content\":\"I love Maths. I would like that too!\",\"User_Id\":\"stud_234\",\"Discussion_Id\":2,\"Parent_id\":8,\"Parent_type\":\"Reply     \"}]", JSONString);
+            Assert.Equal("[{\"Id\":2,\"Content\":\"Unfortunately, I had a bad day!\",\"User_Id\":\"stud_234  \",\"Discussion_Id\":1,\"Parent_id\":1,\"Parent_type\":\"Discussion\"}]", JSONString);
         }
 
         [Fact]

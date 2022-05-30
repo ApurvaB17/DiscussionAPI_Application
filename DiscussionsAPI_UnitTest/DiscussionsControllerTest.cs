@@ -73,5 +73,19 @@ namespace DiscussionsAPI_UnitTest
             JSONString = JsonConvert.SerializeObject(result.Value);
             Assert.Equal("\"What is your question?\"", JSONString);
         }
+
+        [Fact]
+        public void GetAllReplies_DiscussionIdBased()
+        {
+
+            var controller = new DiscussionsController(config);
+            var result = controller.GetReplies(2);
+
+            string JSONString = string.Empty;
+            JSONString = JsonConvert.SerializeObject(result.Value);
+            Assert.Equal("[{\"Id\":8,\"Content\":\"I want to learn Maths!\",\"User_Id\":\"stud_123\",\"Discussion_Id\":2,\"Parent_id\":2,\"Parent_type\":\"Discussion\"}," +
+                         "{\"Id\":9,\"Content\":\"I love Maths. I would like that too!\",\"User_Id\":\"stud_234\",\"Discussion_Id\":2,\"Parent_id\":8,\"Parent_type\":\"Reply     \"}," +
+                         "{\"Id\":1011,\"Content\":\"I love Science. I want to learn that!\",\"User_Id\":\"stud_345\",\"Discussion_Id\":2,\"Parent_id\":8,\"Parent_type\":\"Reply     \"}]", JSONString);
+        }
     }
 }

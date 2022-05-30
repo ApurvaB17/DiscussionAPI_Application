@@ -51,12 +51,12 @@ namespace DiscussionAPI_Application.Controllers
          
         }
 
-        [HttpGet("{discussionId}")]
-        public JsonResult Get(int discussionId)
+        [HttpGet("{id}")]
+        public JsonResult Get(int id)
         {
             try
             {
-                string query = @"select * from dbo.Replies where Discussion_Id=@Discussion_Id";
+                string query = @"select * from dbo.Replies where Id=@Id";
                 DataTable table = new DataTable();
 
                 CommonClass commonClass = new CommonClass();
@@ -68,7 +68,7 @@ namespace DiscussionAPI_Application.Controllers
                     conn.Open();
                     using (SqlCommand command = new SqlCommand(query, conn))
                     {
-                        command.Parameters.AddWithValue("@Discussion_Id", discussionId);
+                        command.Parameters.AddWithValue("@Id", id);
                         dataReader = command.ExecuteReader();
                         table.Load(dataReader);
                         dataReader.Close();
@@ -121,7 +121,7 @@ namespace DiscussionAPI_Application.Controllers
                         command.Parameters.AddWithValue("@User_Id", reply.userId);
                         command.Parameters.AddWithValue("@Discussion_Id", reply.discussionId);
                         command.Parameters.AddWithValue("@Parent_id", reply.parentId);
-                        command.Parameters.AddWithValue("@Parent_type", reply.parentType.ToString());
+                        command.Parameters.AddWithValue("@Parent_type", reply.parentType.ToString().ToLower());
                         dataReader = command.ExecuteReader();
 
                         table.Load(dataReader);

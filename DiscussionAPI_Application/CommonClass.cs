@@ -19,8 +19,7 @@ namespace DiscussionAPI_Application
 
         public string GetConnectionString(IConfiguration configuration)
         {
-            var exepath = new Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).LocalPath;
-            string rootPath = new FileInfo(exepath).DirectoryName;
+            string rootPath = Environment.CurrentDirectory;
             if (rootPath.Contains("DiscussionsAPI_UnitTest"))
             {
                 rootPath = rootPath.Remove(rootPath.Length - 40);

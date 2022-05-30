@@ -88,6 +88,38 @@ namespace DiscussionAPI_Application.Controllers
 
         }
 
+        [HttpGet("{discussionId}/replies")]
+        public JsonResult GetReplies(int discussionId)
+        {
+            try
+            {
+                string query = @"select * from dbo.Replies where Discussion_Id=@Discussion_Id";
+                DataTable table = new DataTable();
+
+                CommonClass commonClass = new CommonClass();
+                string sqlDataSource = commonClass.GetConnectionString(_configuration);
+
+                SqlDataReader dataReader;
+                using (SqlConnection conn = new SqlConnection(sqlDataSource))
+                {
+                    conn.Open();
+                    using (SqlCommand command = new SqlCommand(query, conn))
+                    {
+                        command.Parameters.AddWithValue("@Discussion_Id", discussionId);
+                        dataReader = command.ExecuteReader();
+                        table.Load(dataReader);
+                        dataReader.Close();
+                        conn.Close();
+                    }
+                }
+                return new JsonResult(table);
+            }
+            catch (Exception e)
+            {
+                return new JsonResult(e.Message);
+            }
+
+        }
         [HttpPost]
         public JsonResult Post(Discussions discussion)
         {
