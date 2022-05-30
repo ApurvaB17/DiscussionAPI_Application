@@ -101,7 +101,15 @@ This endpoint starts a new discussion by any user.
   ```
 
 # Relevant files
-## 1. [Controllers](https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionAPI_Application/Controllers)
+## 1.XUnit Unit Testing files([https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionsAPI_UnitTest)])
+    ```
+    DiscussionsControllerTest.cs : To have the Discussions API endpoint tests.
+    ```
+    ```
+    RepliesControllerTest.cs : To have the Replies API endpoint tests.
+    ```
+
+## 2. [Controllers]([https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionAPI_Application/Controllers]
       For all the API methods related to Discussions , refer to the 
       ```
       DiscussionsController.cs
@@ -119,7 +127,7 @@ This endpoint starts a new discussion by any user.
       2. [HttpGet] Get(int id) : To retrieve a reply based on an id.
       4. [HttpPost] Post(Discussions discussion) : To create a new reply.
 
-## 2. [Models](https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionAPI_Application/Models)
+## 3. [Models](https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionAPI_Application/Models)
       Class structures mapped to tables are created in 
       ```
       Discussions.cs : For Discussion table.
