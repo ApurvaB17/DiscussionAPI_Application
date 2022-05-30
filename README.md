@@ -101,13 +101,13 @@ This endpoint starts a new discussion by any user.
   ```
 
 # Relevant files
-## 1.XUnit Unit Testing files([https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionsAPI_UnitTest)])
-    ```
-    DiscussionsControllerTest.cs : To have the Discussions API endpoint tests.
-    ```
-    ```
-    RepliesControllerTest.cs : To have the Replies API endpoint tests.
-    ```
+## 1. [XUnit Unit Testing files]([https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionsAPI_UnitTest]
+      ```
+      DiscussionsControllerTest.cs : To have the Discussions API endpoint tests.
+      ```
+      ```
+      RepliesControllerTest.cs : To have the Replies API endpoint tests.
+      ```
 
 ## 2. [Controllers]([https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionAPI_Application/Controllers]
       For all the API methods related to Discussions , refer to the 
