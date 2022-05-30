@@ -127,7 +127,7 @@ This endpoint starts a new discussion by any user.
       2. [HttpGet] Get(int id) : To retrieve a reply based on an id.
       4. [HttpPost] Post(Discussions discussion) : To create a new reply.
 
-## 3. [Models](https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionAPI_Application/Models)
+## 3. [Models]([https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionAPI_Application/Models]
       Class structures mapped to tables are created in 
       ```
       Discussions.cs : For Discussion table.
