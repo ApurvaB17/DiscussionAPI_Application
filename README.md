@@ -8,7 +8,7 @@
 5. In the Server Explorer pane, right click on Data Connections->Add Connection.
 6. Select the Data Source as Microsoft SQL Server Database File (SqlClient)
 7. Browse the DatabaseDiscussion.mdf from the cloned folder inside DiscussionAPI_Application\DatabaseConnection
-8. Run the existing application by clicking green arrow (IIS Express) on top ![image](https://user-images.githubusercontent.com/72108347/171009884-4e47f436-6c74-4a71-    b8fe-954f583a5353.png) or F5 key.
+8. Run the existing application by clicking green arrow (IIS Express) on top ![image](https://user-images.githubusercontent.com/72108347/171015422-6826d839-979d-47af-    b7ff-301211fc7f2e.png) or F5 key.
 9. After running the application, the browser will open with the following url https://localhost:44365/ (could be different at your end).
 10.Use any API platform to test the APIs. (I used Postman)
 
