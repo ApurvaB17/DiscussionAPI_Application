@@ -8,8 +8,7 @@
 5. In the Server Explorer pane, right click on Data Connections->Add Connection.
 6. Select the Data Source as Microsoft SQL Server Database File (SqlClient)
 7. Browse the DatabaseDiscussion.mdf from the cloned folder inside DiscussionAPI_Application\DatabaseConnection
-8. Run the existing application by clicking green arrow (IIS Express) on top ![image](https://user-images.githubusercontent.com/72108347/170920233-a00b6a2d-f98d-4e8c-    9a2b-e64eed488f61.png)
-   or F5 key.
+8. Run the existing application by clicking green arrow (IIS Express) on top ![image](https://user-images.githubusercontent.com/72108347/171009884-4e47f436-6c74-4a71-    b8fe-954f583a5353.png) or F5 key.
 9. After running the application, the browser will open with the following url https://localhost:44365/ (could be different at your end).
 10.Use any API platform to test the APIs. (I used Postman)
 
@@ -38,29 +37,25 @@
     ```
     Endpoint: https://localhost:44365/api/replies (POST)
     ```
-
     Request body:
     ```
     {
-    "Content":"Response content", // string parameter
-    "userId" :"any user id",  //string parameter
-    "discussionId": Id created in discussion table to which you are responding, //Integer parameter
-    "parentId": Id created in Discussions table/ Replies table to which you are responding, //Integer parameter
-    "parentType":"Discussion" OR "Reply" (Based on whether you are responding to a reply or a discussion) // String Parameter
+      "Content":"Response content", // Required String parameter
+      "userId" :"any user id",  // Required String parameter
+      "discussionId": Id created in discussion table to which you are responding, //Required Integer parameter
+      "parentId": Id created in Discussions table/ Replies table to which you are responding, //Required Integer parameter
+      "parentType":"Discussion" OR "Reply" (Based on whether you are responding to a reply or a discussion) // Required String parameter
     }
     ```
-    
     Response:
     ```
     "Added successfully!"
     ```
   
   ## 3. Retrieve all replies to a given discussion:
-     Any user can retrieve all the comments available in the database in a flat tree for given discussion
-   
+     Any user can retrieve all the comments available in the database in a flat tree for given discussion.
      ```
      Endpoint: https://localhost:44365/api/discussions/id/replies (GET)
-     ```
      ```
      Response:
      ```
@@ -97,8 +92,8 @@
           "Parent_id": 8,
           "Parent_type": "reply     "
       }
-   ]
-   ```
+    ]
+    ```
 
 # Relevant files
 ## 1. [XUnit Unit Testing files]([https://github.com/ApurvaB17/DiscussionAPI_Application/tree/master/DiscussionsAPI_UnitTest)
