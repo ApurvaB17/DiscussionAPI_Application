@@ -1,4 +1,5 @@
 # Discussion API Application
+  This application is a simple Reddit-style discussion API. Any user can start a new discussion and can respond to a question with their comments or respond to each     other's comments.
 ## Running the application locally:
 1. Install Free download Visual Studio from the following link:
    https://visualstudio.microsoft.com/downloads/
